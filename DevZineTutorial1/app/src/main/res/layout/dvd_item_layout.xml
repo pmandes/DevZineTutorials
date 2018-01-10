@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/box_with_shadow"
+    android:padding="15dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/dvd_cover_drawee"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            fresco:placeholderImage="@drawable/dvd"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/dvd_title_text"
+            android:layout_toRightOf="@+id/dvd_cover_drawee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginBottom="3dp"
+            android:text="Star Wars ep. IV" />
+
+        <TextView
+            android:id="@+id/dvd_description_text"
+            android:layout_toRightOf="@+id/dvd_cover_drawee"
+            android:layout_below="@+id/dvd_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="12sp"
+            android:text="A young boy from Tatooine sets out on an adventure with an old Jedi named Obi-Wan Kenobi as his mentor to save Princess Leia." />
+
+        <Button
+            android:id="@+id/book_download_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dvd_cover_drawee"
+            android:layout_below="@+id/dvd_description_text"
+            android:textAllCaps="false"
+            android:text="Watch trailer"/>
+
+    </RelativeLayout>
+</FrameLayout>

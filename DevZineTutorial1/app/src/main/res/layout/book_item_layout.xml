@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/box_with_shadow"
+    android:padding="15dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/book_cover_drawee"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            fresco:placeholderImage="@drawable/book"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/book_title_text"
+            android:layout_toLeftOf="@+id/book_cover_drawee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginBottom="3dp"
+            android:layout_alignParentLeft="true"
+            android:text="Lord of The Rings" />
+
+        <TextView
+            android:id="@+id/book_author_text"
+            android:layout_toLeftOf="@+id/book_cover_drawee"
+            android:layout_below="@+id/book_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:textSize="18sp"
+            android:text="J. R. R. Tolkien" />
+
+        <TextView
+            android:id="@+id/book_description_text"
+            android:layout_toLeftOf="@+id/book_cover_drawee"
+            android:layout_below="@+id/book_author_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:textSize="12sp"
+            android:text="A young Hobbit named Frodo is thrown on an amazing adventure, when he is appointed the job of destroying the one ring which was created by the dark lord Sauron." />
+
+    </RelativeLayout>
+</FrameLayout>
