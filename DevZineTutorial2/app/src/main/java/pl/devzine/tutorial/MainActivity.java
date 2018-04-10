@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import pl.devzine.tutorial.config.Config;
@@ -18,7 +19,6 @@ public class  MainActivity extends AppCompatActivity implements ThumbnailClickLi
     private RecyclerView thumbnailsRecycler;
     private ThumbnailListAdapter adapter;
     private List<Thumbnail> items = new ArrayList<Thumbnail>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,25 +60,16 @@ public class  MainActivity extends AppCompatActivity implements ThumbnailClickLi
 
     private List<ThumbnailListItem> getVideoData() {
 
-        List<ThumbnailListItem> list = new ArrayList<>();
-
-        Video v1 = new Video("bD7bpG-zDJQ", "The Phantom Menace");
-        Video v2 = new Video("gYbW1F_c9eM", "Attack Of The Clones");
-        Video v3 = new Video("5UnjrG_N8hU", "Revenge Of The Sith");
-        Video v4 = new Video("vZ734NWnAHA", "A New Hope");
-        Video v5 = new Video("JNwNXF9Y6kY", "The Empire Strikes Back");
-        Video v6 = new Video("16YLjTkK5jE", "Return Of The Jedi");
-        Video v7 = new Video("sGbxmsDFVnE", "The Force Awakens");
-        Video v8 = new Video("Q0CbN8sfihY", "The Last Jedi");
-
-        list.add(new ThumbnailListItem(v1));
-        list.add(new ThumbnailListItem(v2));
-        list.add(new ThumbnailListItem(v3));
-        list.add(new ThumbnailListItem(v4));
-        list.add(new ThumbnailListItem(v5));
-        list.add(new ThumbnailListItem(v6));
-        list.add(new ThumbnailListItem(v7));
-        list.add(new ThumbnailListItem(v8));
+        List<ThumbnailListItem> list = Arrays.asList(
+            new ThumbnailListItem(new Video("bD7bpG-zDJQ", "The Phantom Menace")),
+            new ThumbnailListItem(new Video("gYbW1F_c9eM", "Attack Of The Clones")),
+            new ThumbnailListItem(new Video("5UnjrG_N8hU", "Revenge Of The Sith")),
+            new ThumbnailListItem(new Video("vZ734NWnAHA", "A New Hope")),
+            new ThumbnailListItem(new Video("JNwNXF9Y6kY", "The Empire Strikes Back")),
+            new ThumbnailListItem(new Video("16YLjTkK5jE", "Return Of The Jedi")),
+            new ThumbnailListItem(new Video("sGbxmsDFVnE", "The Force Awakens")),
+            new ThumbnailListItem(new Video("Q0CbN8sfihY", "The Last Jedi"))
+        );
 
         return list;
     }
