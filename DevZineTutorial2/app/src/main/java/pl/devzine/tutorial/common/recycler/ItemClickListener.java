@@ -1,4 +1,4 @@
-package pl.devzine.tutorial.common;
+package pl.devzine.tutorial.common.recycler;
 
 import android.view.View;
 

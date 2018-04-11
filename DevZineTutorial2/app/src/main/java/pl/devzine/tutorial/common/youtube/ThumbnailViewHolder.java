@@ -1,4 +1,4 @@
-package pl.devzine.tutorial.viewholder;
+package pl.devzine.tutorial.common.youtube;
 
 import android.view.View;
 import android.widget.TextView;
@@ -6,8 +6,8 @@ import android.widget.TextView;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 
 import pl.devzine.tutorial.R;
-import pl.devzine.tutorial.Thumbnail;
-import pl.devzine.tutorial.common.AbstractRecyclerViewHolder;
+import pl.devzine.tutorial.common.youtube.Thumbnail;
+import pl.devzine.tutorial.common.recycler.AbstractRecyclerViewHolder;
 import pl.devzine.tutorial.config.Config;
 import pl.devzine.tutorial.model.Video;
 

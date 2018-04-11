@@ -1,4 +1,4 @@
-package pl.devzine.tutorial;
+package pl.devzine.tutorial.common.youtube;
 
 import android.util.Log;
 

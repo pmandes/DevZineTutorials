@@ -1,13 +1,13 @@
-package pl.devzine.tutorial;
+package pl.devzine.tutorial.common.youtube;
 
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import pl.devzine.tutorial.common.AbstractAdapter;
-import pl.devzine.tutorial.common.AbstractRecyclerViewHolder;
+import pl.devzine.tutorial.R;
+import pl.devzine.tutorial.common.recycler.AbstractAdapter;
+import pl.devzine.tutorial.common.recycler.AbstractRecyclerViewHolder;
 import pl.devzine.tutorial.model.Video;
-import pl.devzine.tutorial.viewholder.ThumbnailViewHolder;
 
 public class ThumbnailListAdapter extends AbstractAdapter<ThumbnailListItem, AbstractRecyclerViewHolder> {
 

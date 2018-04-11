@@ -7,18 +7,23 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import pl.devzine.tutorial.common.youtube.ThumbnailClickListener;
+import pl.devzine.tutorial.common.youtube.ThumbnailListAdapter;
+import pl.devzine.tutorial.common.youtube.ThumbnailListItem;
+import pl.devzine.tutorial.common.youtube.YouTubeFragment;
 import pl.devzine.tutorial.config.Config;
 import pl.devzine.tutorial.model.Video;
 
 public class  MainActivity extends AppCompatActivity implements ThumbnailClickListener {
 
+    private static final String TAG = MainActivity.class.getName();
+
     private RecyclerView thumbnailsRecycler;
     private ThumbnailListAdapter adapter;
-    private List<Thumbnail> items = new ArrayList<Thumbnail>();
+    private YouTubeFragment playerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +48,20 @@ public class  MainActivity extends AppCompatActivity implements ThumbnailClickLi
 
     private void initVideo(String key, String videoId) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        YouTubeFragment fragment = new YouTubeFragment();
+        playerFragment = new YouTubeFragment();
 
         Bundle bundle = new Bundle();
         bundle.putString(YouTubeFragment.VIDEO_ID, videoId);
         bundle.putString(YouTubeFragment.API_KEY, key);
 
-        fragment.setArguments(bundle);
-        ft.add(R.id.youtube_frame_layout, fragment).commit();
+        playerFragment.setArguments(bundle);
+        ft.add(R.id.youtube_frame_layout, playerFragment).commit();
     }
 
     @Override
     public void onThumbnailClicked(Video video) {
-        Log.d("CLICK", "video: " + video.toString());
+        Log.d(TAG, "video: " + video.toString());
+        playerFragment.playVideo(video.getVideoId());
     }
 
     private List<ThumbnailListItem> getVideoData() {
