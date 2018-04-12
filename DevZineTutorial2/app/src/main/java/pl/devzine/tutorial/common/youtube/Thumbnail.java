@@ -6,17 +6,20 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 
-public class Thumbnail implements YouTubeThumbnailView.OnInitializedListener, YouTubeThumbnailLoader.OnThumbnailLoadedListener {
+public class Thumbnail implements YouTubeThumbnailView.OnInitializedListener {
 
     private static final String TAG = Thumbnail.class.getName();
+
+    private YouTubeThumbnailLoader.OnThumbnailLoadedListener listener;
 
     private YouTubeThumbnailView thumbnailView;
     private String key;
     private String videoId;
 
-    public Thumbnail(String key, String videoId) {
+    public Thumbnail(String key, String videoId, YouTubeThumbnailLoader.OnThumbnailLoadedListener listener) {
         this.key = key;
         this.videoId = videoId;
+        this.listener = listener;
     }
 
     public void init() {
@@ -31,22 +34,12 @@ public class Thumbnail implements YouTubeThumbnailView.OnInitializedListener, Yo
     @Override
     public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView, YouTubeThumbnailLoader youTubeThumbnailLoader) {
         Log.d(TAG, "onInitializationSuccess");
-        youTubeThumbnailLoader.setOnThumbnailLoadedListener(this);
+        youTubeThumbnailLoader.setOnThumbnailLoadedListener(listener);
         youTubeThumbnailLoader.setVideo(thumbnailView.getTag().toString());
     }
 
     @Override
     public void onInitializationFailure(YouTubeThumbnailView youTubeThumbnailView, YouTubeInitializationResult youTubeInitializationResult) {
         Log.e(TAG, "onInitializationFailure: " + youTubeInitializationResult.toString());
-    }
-
-    @Override
-    public void onThumbnailLoaded(YouTubeThumbnailView youTubeThumbnailView, String s) {
-        Log.d(TAG, "onThumbnailLoaded: " + s);
-    }
-
-    @Override
-    public void onThumbnailError(YouTubeThumbnailView youTubeThumbnailView, YouTubeThumbnailLoader.ErrorReason errorReason) {
-        Log.e(TAG, "onThumbnailError: " + errorReason.toString());
     }
 }

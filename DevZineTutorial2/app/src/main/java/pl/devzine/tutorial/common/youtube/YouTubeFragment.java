@@ -2,10 +2,14 @@ package pl.devzine.tutorial.common.youtube;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+
+import pl.devzine.tutorial.R;
 
 public class YouTubeFragment extends YouTubePlayerSupportFragment {
 
@@ -15,6 +19,7 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment {
     public static final String API_KEY = "API_KEY";
 
     private YouTubePlayer player;
+    private ProgressBar progressBar;
 
     public YouTubeFragment() {
     }
